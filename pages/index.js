@@ -8,6 +8,7 @@ export default function Home() {
       </Head>
 
       <main>
+        <h1>building...</h1>
         <p> kk</p>
     
       </main>
