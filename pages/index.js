@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import SocialProfileSimple from '../components/SocialProfileSimple'
-
+import SocialProfileSimple from '../components/SocialProfileSimple/SocialProfileSimple'
 
 export default function Home() {
   return (
@@ -9,7 +8,7 @@ export default function Home() {
         <title>nico.cejas</title>
       </Head>
       <main>        
-        <SocialProfileSimple/>
+        <SocialProfileSimple/>        
       </main>
     </div>
   )
