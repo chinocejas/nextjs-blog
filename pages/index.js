@@ -1,16 +1,15 @@
 import Head from 'next/head'
+import SocialProfileSimple from '../components/SocialProfileSimple'
+
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>chinocejas</title>
+        <title>nico.cejas</title>
       </Head>
-
-      <main>
-        <h1>building...</h1>
-        <p> kk</p>
-    
+      <main>        
+        <SocialProfileSimple/>
       </main>
     </div>
   )
