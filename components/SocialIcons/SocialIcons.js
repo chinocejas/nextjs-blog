@@ -40,7 +40,7 @@ export default function SocialIcons()
             {/* Instagram */}          
              <Button w={'full'} colorScheme={'gray'} leftIcon={<BsInstagram />}  >
                 <Center>
-                    <a href="https://www.instagram.com/chinocejas/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/nico.cjas/" target="_blank" rel="noopener noreferrer">
                         <Text> 
                             chinocejas
                         </Text>
