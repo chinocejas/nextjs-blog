@@ -1,16 +1,17 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import SocialIconsSmall from '../components/SocialIcons/SocialIconsSmall';
 
 export default function About() {
   return (
     <div className="container">
       <Head>
-        <title>chino.cejas</title>
+        <title>nico.cejas</title>
       </Head>
-
-      <main>
-        <h1>this is </h1>
+      <main>    
+        <SocialIconsSmall></SocialIconsSmall>  
       </main>
     </div>
   )
 }
+
+

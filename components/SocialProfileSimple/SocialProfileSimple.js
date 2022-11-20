@@ -7,11 +7,13 @@ import {
     Stack,
     useColorModeValue,
   } from '@chakra-ui/react';  
-import SocialIcons from '../SocialIcons/SocialIcons';
 import BadgeCustom from '../BadgeCustom/BadgeCustom';
+import SocialIconsSmall from '../SocialIcons/SocialIconsSmall';
+import ToggleTheme from '../Common/ToggleTheme';
   
   export default function SocialProfileSimple() {
     return (
+      
       <Center py={6}> 
         <Box
           maxW={'320px'}
@@ -20,7 +22,9 @@ import BadgeCustom from '../BadgeCustom/BadgeCustom';
           boxShadow={'2xl'}
           rounded={'lg'}
           p={6}
+          marginTop={7}
           textAlign={'center'}>
+          <ToggleTheme></ToggleTheme>
           <Avatar
             size={'xl'}
             src={
@@ -47,8 +51,9 @@ import BadgeCustom from '../BadgeCustom/BadgeCustom';
           <Text
             textAlign={'center'}
             color={useColorModeValue('gray.700', 'gray.400')}
-            px={3}>
-            Software developer             
+            px={5}>
+            I'm a { new Date().getFullYear() - 1993 } years old Software developer born in Argentina.   
+            My career is focus as backend developer.             
           </Text>
   
           <Stack align={'center'} justify={'center'} direction={'row'} mt={4}>
@@ -62,8 +67,8 @@ import BadgeCustom from '../BadgeCustom/BadgeCustom';
             <BadgeCustom name="Javascript"></BadgeCustom>
             <BadgeCustom name="Jquery"></BadgeCustom>            
           </Stack>
-          <Stack mt={3} direction={'row'} spacing={2}>
-            <SocialIcons></SocialIcons>
+          <Stack mt={5} direction={'row'} spacing={2} align={'center'}>
+            <SocialIconsSmall></SocialIconsSmall>
           </Stack>
         </Box>
       </Center>
