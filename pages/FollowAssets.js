@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React, {useState, useEffect, useContext} from 'react'
 import TablePortfolio from "../components/FollowAssert/TablePortfolio";
 import { IconButton } from '@chakra-ui/react'
 import ButtonAdd from "../components/FollowAssert/ButtonAdd";
@@ -30,17 +31,18 @@ export default function FollowAssets() {
       totalUsd: 3020,
     },
   ];
-
+  const [assertListValues, setAssertListValues] = useState(rows);
+  
+ ;
+  
   return (
     <div className="container">
       <Head>
         <title>Follow Assets</title>
       </Head>
       <main>
-        <ButtonAdd></ButtonAdd>
-        {/*<DrawerAddAssert></DrawerAddAssert> */}
-        
-        <TablePortfolio headers={headerList} rows={rows}></TablePortfolio>
+        <DrawerAddAssert assertList= {assertListValues} setAssertListValues = {setAssertListValues}></DrawerAddAssert>
+        <TablePortfolio headers={headerList} rows={assertListValues} assertListValues ={assertListValues}></TablePortfolio>
       </main>
     </div>
   );

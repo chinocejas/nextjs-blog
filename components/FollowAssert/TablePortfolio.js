@@ -1,4 +1,4 @@
-
+import React, {useState, useEffect, useContext} from 'react'
 import {
   Table,
   Thead,
@@ -14,6 +14,8 @@ import {
 export default function TablePortfolio(props) {
   let headerList = props.headers ?  props.headers : [];
   let rows = props.rows ? props.rows : [];
+  const [rowsData] = useState(rows);
+
   return (
     <TableContainer>
     <Table variant="striped" colorScheme="teal">
@@ -28,7 +30,7 @@ export default function TablePortfolio(props) {
       </Thead>
       <Tbody>
         {
-            rows.map((row,index) => {
+            rowsData.map((row,index) => {
                 return <Tr key={index}>
                   <Td>{row.currency}</Td>
                   <Td>{row.type}</Td>

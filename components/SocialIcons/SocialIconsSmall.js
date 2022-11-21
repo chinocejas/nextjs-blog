@@ -1,10 +1,9 @@
 import { BsGoogle, BsTwitter, BsLinkedin, BsInstagram } from "react-icons/bs";
 import { Button, Center, Flex, HStack, Link, Spacer } from "@chakra-ui/react";
-import theme from "../../theme/default";
+
 
 export default function SocialIconsSmall() {
-  console.log(theme.config);
-
+  
   return (
     <Flex minWidth='max-content' alignItems='center' gap='2'> 
     <HStack spacing={6} align={"center"} maxW={"md"} w={"full"} margin={3}>
