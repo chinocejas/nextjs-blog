@@ -13,7 +13,7 @@ import {
 
 export default function TablePortfolio(props) {
   let headerList = props.headers ?  props.headers : [];
-  let rows = props.rows ? props.rows : [];
+  let rows = props.assertListValues ? props.assertListValues : [];
   const [rowsData] = useState(rows);
 
   return (
