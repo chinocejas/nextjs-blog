@@ -2,7 +2,7 @@ import { Badge,useColorModeValue } from "@chakra-ui/react"
 
 export default function BadgeCustom(params)
 {
-    var nameToShow = '#' + params.name;
+    var nameToShow = params.prefix + params.name;
     return (
             <Badge
               px={2}
