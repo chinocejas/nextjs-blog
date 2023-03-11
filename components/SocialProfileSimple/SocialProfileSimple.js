@@ -12,6 +12,7 @@ import SocialIconsSmall from '../SocialIcons/SocialIconsSmall';
 import ToggleTheme from '../Common/ToggleTheme';
   
   export default function SocialProfileSimple() {
+    let badgeCustomPrefix = '#';
     return (
       
       <Center py={6}> 
@@ -57,15 +58,15 @@ import ToggleTheme from '../Common/ToggleTheme';
           </Text>
   
           <Stack align={'center'} justify={'center'} direction={'row'} mt={4}>
-            <BadgeCustom name="backend"></BadgeCustom>
-            <BadgeCustom name="net"></BadgeCustom>
-            <BadgeCustom name="sql"></BadgeCustom>
-            <BadgeCustom name="azure"></BadgeCustom>            
+            <BadgeCustom prefix= {badgeCustomPrefix} name="backend"></BadgeCustom>
+            <BadgeCustom prefix= {badgeCustomPrefix} name="net"></BadgeCustom>
+            <BadgeCustom prefix= {badgeCustomPrefix} name="sql"></BadgeCustom>
+            <BadgeCustom prefix= {badgeCustomPrefix} name="azure"></BadgeCustom>            
           </Stack>
           <Stack align={'center'} justify={'center'} direction={'row'} mt={3}>
-            <BadgeCustom name="HTML&CSS"></BadgeCustom>
-            <BadgeCustom name="Javascript"></BadgeCustom>
-            <BadgeCustom name="Jquery"></BadgeCustom>            
+            <BadgeCustom prefix= {badgeCustomPrefix} name="HTML&CSS"></BadgeCustom>
+            <BadgeCustom prefix= {badgeCustomPrefix} name="Javascript"></BadgeCustom>
+            <BadgeCustom prefix= {badgeCustomPrefix} name="Jquery"></BadgeCustom>            
           </Stack>
           <Stack mt={5} direction={'row'} spacing={2} align={'center'}>
             <SocialIconsSmall></SocialIconsSmall>
