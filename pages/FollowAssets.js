@@ -1,7 +1,9 @@
 import Head from "next/head";
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useEffect, useContext, useReducer} from 'react'
 import TablePortfolio from "../components/FollowAssert/TablePortfolio";
 import DrawerAddAssert from "../components/FollowAssert/DrawerAddAssert"
+import AssertsValueContext from "../components/FollowAssert/AssertsValueContext"
+import reducer from "../components/FollowAssert/AssertsValueContext"
 
 export default function FollowAssets() {
   var headerList = [
@@ -29,17 +31,30 @@ export default function FollowAssets() {
       totalUsd: 3020,
     },
   ];
-  const [assertListValues, setAssertListValues] = useState(rows);
+
+  
+  
+  const initialContextValue = {
+    list: rows,
+  };
+  const [state, dispatch] = useReducer(reducer, initialContextValue);
+
+  useEffect(() => {
+    // Log the current context value after each dispatch
+    console.log("Context value father:", state);
+  }, [state]);
 
   return (
     <div className="container">
-      <Head>
-        <title>Follow Assets</title>
-      </Head>
-      <main>
-        <DrawerAddAssert assertList= {assertListValues} setAssertListValues = {setAssertListValues}></DrawerAddAssert>
-        <TablePortfolio headers={headerList}  assertListValues ={assertListValues}></TablePortfolio>
-      </main>
+      <AssertsValueContext.Provider value={{state, dispatch}}>
+          <Head>
+            <title>Follow Assets</title>
+          </Head>
+          <main>
+            <DrawerAddAssert ></DrawerAddAssert>
+            <TablePortfolio headers={headerList}></TablePortfolio>
+          </main>
+      </AssertsValueContext.Provider>
     </div>
   );
 }

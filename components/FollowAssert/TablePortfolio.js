@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useEffect, useContext, useReducer} from 'react'
+import AssertsValueContext, {reducer} from "../FollowAssert/AssertsValueContext";
 import {
   Table,
   Thead,
@@ -12,10 +13,17 @@ import {
 } from '@chakra-ui/react'
 
 export default function TablePortfolio(props) {
-  let headerList = props.headers ?  props.headers : [];
-  let rows = props.assertListValues ? props.assertListValues : [];
-  const [rowsData] = useState(rows);
 
+  const {state, dispatch}  = useContext(AssertsValueContext);
+
+
+  let headerList = props.headers ?  props.headers : [];
+
+  useEffect(() => {
+    console.log('TablePortfolio changed');
+  }, [state, dispatch]);
+
+  
   return (
     <TableContainer>
     <Table variant="striped" colorScheme="teal">
@@ -30,7 +38,7 @@ export default function TablePortfolio(props) {
       </Thead>
       <Tbody>
         {
-            rowsData.map((row,index) => {
+            state.list.map((row,index) => {
                 return <Tr key={index}>
                   <Td>{row.currency}</Td>
                   <Td>{row.type}</Td>

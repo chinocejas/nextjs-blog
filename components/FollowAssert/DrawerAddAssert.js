@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useContext, useReducer, useState } from "react";
 import { IoIosAdd, IoAdd } from "react-icons/io";
+
 import {
   Drawer,
   DrawerBody,
@@ -24,10 +25,11 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 
-export default function DrawerAddAssert(props) {
+import AssertsValueContext, {reducer} from "../FollowAssert/AssertsValueContext";
+
+export default function DrawerAddAssert() {
   const { isOpen, onOpen, onClose, getDisclosureProps } = useDisclosure();
   const firstField = React.useRef();
-  let assertList = props.assertList ;
   var modelAssert = {
     currency: "",
     type: "",
@@ -35,21 +37,20 @@ export default function DrawerAddAssert(props) {
     value: "",
   };
   const [assertValue, setAssertValue] = React.useState(modelAssert);
-  const [assertListValues] = React.useState(props.assertList);
-  const setAssertListValues = props.setAssertListValues;
-  //const assertListValues = props.assertList;
+
+  const contextValue = useContext(AssertsValueContext);
+
+  const initialState = contextValue.state;
+  
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const changeHandler = (e) => {
     const newAssertValue = { ...assertValue, [e.target.name]: e.currentTarget.value };
     setAssertValue(newAssertValue);
   };
 
   const submitNewAssert = () => {
-    debugger;
-    setAssertListValues(prevState => {
-      console.log('prevState ' + JSON.stringify(prevState));
-      prevState.push(assertValue)
-    });
-    console.log('newState ' + JSON.stringify(assertListValues));
+    dispatch({ type: 'add', assertValue });
     onClose();
   };
 
