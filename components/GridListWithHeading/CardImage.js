@@ -6,14 +6,13 @@ import {
     Text,
     Stack, 
     Link,
-    CardFooter,
-    ButtonGroup,
     Button } from "@chakra-ui/react"
 import BadgeCustom from "../BadgeCustom/BadgeCustom"
 
 export default function CardImage(params)
 {
     let badgeCustomPrefix = 'AR$: '
+    let firstImg = params.imgSrc[0];
     return (
     <>
     
@@ -21,7 +20,7 @@ export default function CardImage(params)
         <CardBody>
             <Link >
                 <Image
-                src= {params.imgSrc} 
+                src= {firstImg.src}
                 borderRadius='lg'
                  />
             </Link>

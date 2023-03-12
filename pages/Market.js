@@ -34,7 +34,11 @@ export default function Market() {
           id: i,
           title: 'Smart Tv Led Bgh 43 Full Hd Pne040253 Android 220',
           text: 'Fecha de compra: 4/5/2022. Impecable',
-          imgSrc: 'https://www.lg.com/ar/images/televisores/md06198536/gallery/DES_1_N.jpg',
+          imgSrc: [
+            { src: "https://www.lg.com/ar/images/televisores/md06198536/gallery/DES_1_N.jpg" },
+            { src: "https://www.lg.com/ar/images/televisores/md06198536/gallery/DES_1_N.jpg" },
+            { src: "https://www.lg.com/ar/images/televisores/md06198536/gallery/DES_1_N.jpg" },
+          ],
           price: 15000};
       });
 
