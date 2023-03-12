@@ -5,16 +5,15 @@ import {
     SimpleGrid,
     Text,
     Stack,
-    HStack,
-    Button,
+    HStack
   } from '@chakra-ui/react';
-  import CardImage from '../GridListWithHeading/CardImage'
+import CardImage from '../GridListWithHeading/CardImage'
 import {useState} from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
+import ImgViewer from "../../components/ImgViewer/ImgViewer";
 
   export default function GridListWithHeading(params) {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
+    const [slides, setSlides] = useState([]);
 
     const productsToSell = params.items;
 
@@ -38,7 +37,7 @@ import "yet-another-react-lightbox/styles.css";
                         description={product.text}
                         price = {product.price}
                         imgSrc = {product.imgSrc}
-                        onClick={showImageViewer(product.imgSrc)}
+                        onClick={() => showImageViewer(product.imgSrc)}
                         >
                     </CardImage>
                 </HStack>
@@ -46,20 +45,16 @@ import "yet-another-react-lightbox/styles.css";
           </SimpleGrid>
         </Container>
 
-        <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={[
-          { src: "https://www.lg.com/ar/images/televisores/md06198536/gallery/DES_1_N.jpg" },
-          { src: "https://www.lg.com/ar/images/televisores/md06198536/gallery/DES_1_N.jpg" },
-          { src: "https://www.lg.com/ar/images/televisores/md06198536/gallery/DES_1_N.jpg" },
-        ]}
-        />
+       <ImgViewer
+       open={open}
+       close={() => setOpen(false)}
+       slides={slides}>
+       </ImgViewer>                
       </Box>
     );
 
     function showImageViewer(images){
-        //setOpen(true);
-        console.log('showImageViewer---')
+        setSlides(images);
+        setOpen(true);
     }
   }
