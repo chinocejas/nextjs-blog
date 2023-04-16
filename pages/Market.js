@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import GridListWithHeading from '../components/GridListWithHeading/GridListWithHeading'
+import SimpleFooter from '../components/Footer/SimpleFooter';
 
 export default function Market() {
   const itemsForSell = getItemsForSell();
@@ -16,6 +17,7 @@ export default function Market() {
             description={sellListDescription}
             items={itemsForSell}>
         </GridListWithHeading>
+        <SimpleFooter></SimpleFooter>
       </main>
     </div>
   )

@@ -53,8 +53,9 @@ import ToggleTheme from '../Common/ToggleTheme';
             textAlign={'center'}
             color={useColorModeValue('gray.700', 'gray.400')}
             px={5}>
-            I'm a { new Date().getFullYear() - 1993 } years old Software developer born in Argentina.   
-            My career is focus as backend developer.             
+            I'm a software developer with a focus on backend development.
+            I'm {getYearsOld()} years old and I'm based in
+            <span> 🇦🇷</span>  
           </Text>
   
           <Stack align={'center'} justify={'center'} direction={'row'} mt={4}>
@@ -74,4 +75,15 @@ import ToggleTheme from '../Common/ToggleTheme';
         </Box>
       </Center>
     );
+
+    function getYearsOld() {
+      const birthdate = new Date('1993-07-14');
+      const today = new Date();
+      let age = today.getFullYear() - birthdate.getFullYear();
+      const month = today.getMonth() - birthdate.getMonth();
+      if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
+        age--;
+      }
+      return age;
+    }
   }

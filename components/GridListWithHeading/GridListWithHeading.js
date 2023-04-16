@@ -5,11 +5,15 @@ import {
     SimpleGrid,
     Text,
     Stack,
-    HStack
+    HStack,
+    Flex,
+    Spacer,
+    ButtonGroup
   } from '@chakra-ui/react';
 import CardImage from '../GridListWithHeading/CardImage'
 import {useState} from "react";
 import ImgViewer from "../../components/ImgViewer/ImgViewer";
+import ToggleTheme from '../Common/ToggleTheme'; 
 
   export default function GridListWithHeading(params) {
     const [open, setOpen] = useState(false);
@@ -19,7 +23,15 @@ import ImgViewer from "../../components/ImgViewer/ImgViewer";
 
     return (
       <Box p={4}>
+        <Flex minWidth='max-content' alignItems='center' gap='2'>
+          <Spacer />
+          <ButtonGroup gap='2'>
+            <ToggleTheme></ToggleTheme>
+          </ButtonGroup>
+        </Flex>
+        
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
+          
           <Heading fontSize={'3xl'}>{params.title}</Heading>
           <Text color={'gray.600'} fontSize={'xl'}>
             {params.description}

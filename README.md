@@ -11,3 +11,4 @@ This project is used to learn [Next.js](https://nextjs.org/).
 - https://yet-another-react-lightbox.com/
 - https://nextjs.org/
 - https://chakra-templates.dev/
+- https://my-chakra-components.vercel.app/
