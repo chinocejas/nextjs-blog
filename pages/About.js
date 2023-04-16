@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import SocialIconsSmall from '../components/SocialIcons/SocialIconsSmall';
+import SimpleFooter from '../components/Footer/SimpleFooter';
 
 export default function About() {
   return (
@@ -8,7 +8,7 @@ export default function About() {
         <title>nico.cejas</title>
       </Head>
       <main>    
-        <SocialIconsSmall></SocialIconsSmall>  
+        <SimpleFooter /> 
       </main>
     </div>
   )
