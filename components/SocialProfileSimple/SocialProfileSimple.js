@@ -6,11 +6,13 @@ import {
     Text,
     Stack,
     useColorModeValue,
+    Link,
   } from '@chakra-ui/react';  
 import BadgeCustom from '../BadgeCustom/BadgeCustom';
 import SocialIconsSmall from '../SocialIcons/SocialIconsSmall';
 import ToggleTheme from '../Common/ToggleTheme';
-  
+import NextLink from 'next/link'
+
   export default function SocialProfileSimple() {
     let badgeCustomPrefix = '#';
     return (
@@ -26,26 +28,29 @@ import ToggleTheme from '../Common/ToggleTheme';
           marginTop={7}
           textAlign={'center'}>
           <ToggleTheme></ToggleTheme>
-          <Avatar
-            size={'xl'}
-            src={
-              'https://pbs.twimg.com/profile_images/1548722091788312579/yyBhWRqb_400x400.jpg'
-            }
-            alt={'Avatar Alt'}
-            mb={4}
-            pos={'relative'}
-            _after={{
-              content: '""',
-              w: 4,
-              h: 4,
-              bg: 'green.300',
-              border: '2px solid white',
-              rounded: 'full',
-              pos: 'absolute',
-              bottom: 0,
-              right: 3,
-            }}
-          />
+          <Link as={NextLink} href='/CurriculumVitae'> 
+            <Avatar
+              size={'xl'}
+              src={
+                'https://pbs.twimg.com/profile_images/1548722091788312579/yyBhWRqb_400x400.jpg'
+              }
+              alt={'Avatar Alt'}
+              mb={4}
+              pos={'relative'}
+              _after={{
+                content: '""',
+                w: 4,
+                h: 4,
+                bg: 'green.300',
+                border: '2px solid white',
+                rounded: 'full',
+                pos: 'absolute',
+                bottom: 0,
+                right: 3,
+              }}
+            />
+          </Link>
+          
           <Heading fontSize={'2xl'} fontFamily={'body'}>
             Nicolas Cejas
           </Heading>          
