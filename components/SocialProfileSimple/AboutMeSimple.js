@@ -12,6 +12,7 @@ import BadgeCustom from '../BadgeCustom/BadgeCustom';
 import SocialIconsSmall from '../SocialIcons/SocialIconsSmall';
 import ToggleTheme from '../Common/ToggleTheme';
 import NextLink from 'next/link';
+
   export default function SocialProfileSimple() {
     return (
       

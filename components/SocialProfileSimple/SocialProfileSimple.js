@@ -12,8 +12,10 @@ import BadgeCustom from '../BadgeCustom/BadgeCustom';
 import SocialIconsSmall from '../SocialIcons/SocialIconsSmall';
 import ToggleTheme from '../Common/ToggleTheme';
 import NextLink from 'next/link';
+
   export default function SocialProfileSimple() {
     let badgeCustomPrefix = '#';
+
     return (
       
       <Center py={6}> 
@@ -76,15 +78,4 @@ import NextLink from 'next/link';
         </Box>
       </Center>
     );
-
-    function getYearsOld() {
-      const birthdate = new Date('1993-07-14');
-      const today = new Date();
-      let age = today.getFullYear() - birthdate.getFullYear();
-      const month = today.getMonth() - birthdate.getMonth();
-      if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
-        age--;
-      }
-      return age;
-    }
   }
