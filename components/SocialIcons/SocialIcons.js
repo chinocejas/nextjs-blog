@@ -46,7 +46,17 @@ export default function SocialIcons()
                         </Text>
                     </a>                
                 </Center>
-            </Button>                
+            </Button> 
+             {/* EyeEm */}          
+             <Button w={'full'} colorScheme={'gray'} leftIcon={<BsInstagram />}  >
+                <Center>
+                    <a href="https://www.instagram.com/nico.cjas/" target="_blank" rel="noopener noreferrer">
+                        <Text> 
+                            chinocejas
+                        </Text>
+                    </a>                
+                </Center>
+            </Button>                         
         </Stack>
     ); 
 }

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import SimpleFooter from '../components/Footer/SimpleFooter';
+import AboutMeSimple from '../components/SocialProfileSimple/AboutMeSimple';
 export default function About() {
   return (
     <div className="container">
@@ -9,7 +9,7 @@ export default function About() {
       <main>    
        
       </main>
-      <SimpleFooter></SimpleFooter>
+      <AboutMeSimple></AboutMeSimple>
     </div>
   )
 }
