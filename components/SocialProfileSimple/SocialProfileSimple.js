@@ -11,8 +11,7 @@ import {
 import BadgeCustom from '../BadgeCustom/BadgeCustom';
 import SocialIconsSmall from '../SocialIcons/SocialIconsSmall';
 import ToggleTheme from '../Common/ToggleTheme';
-import NextLink from 'next/link'
-
+import NextLink from 'next/link';
   export default function SocialProfileSimple() {
     let badgeCustomPrefix = '#';
     return (
@@ -28,12 +27,10 @@ import NextLink from 'next/link'
           marginTop={7}
           textAlign={'center'}>
           <ToggleTheme></ToggleTheme>
-          <Link as={NextLink} href='/CurriculumVitae'> 
+          <Link as={NextLink} href='/About'> 
             <Avatar
               size={'xl'}
-              src={
-                'https://pbs.twimg.com/profile_images/1548722091788312579/yyBhWRqb_400x400.jpg'
-              }
+              src={'images/nicoprofile.jpg'}
               alt={'Avatar Alt'}
               mb={4}
               pos={'relative'}
@@ -59,7 +56,6 @@ import NextLink from 'next/link'
             color={useColorModeValue('gray.700', 'gray.400')}
             px={5}>
             I'm a software developer with a focus on backend development.
-            I'm {getYearsOld()} years old and I'm based in
             <span> 🇦🇷</span>  
           </Text>
   
