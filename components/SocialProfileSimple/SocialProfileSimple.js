@@ -72,7 +72,7 @@ import NextLink from 'next/link';
             <BadgeCustom prefix= {badgeCustomPrefix} name="Javascript"></BadgeCustom>
             <BadgeCustom prefix= {badgeCustomPrefix} name="Jquery"></BadgeCustom>            
           </Stack>
-          <Stack mt={5} direction={'row'} spacing={2} align={'center'}>
+          <Stack mt={4} direction={'row'} spacing={2} align={'center'}>
             <SocialIconsSmall></SocialIconsSmall>
           </Stack>
         </Box>
