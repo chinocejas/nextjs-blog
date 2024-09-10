@@ -14,6 +14,7 @@ export default function SocialIconsSmall() {
     });
   };
 
+
   return (
     <HStack spacing={8} margin={2} justifyContent={"center"}>
       {/* Google */}
