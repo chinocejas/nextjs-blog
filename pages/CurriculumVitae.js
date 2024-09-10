@@ -1,8 +1,13 @@
 import Head from 'next/head';
 import GridExperiences from '../components/GridWithContent/GridExperiences';
 import SimpleFooter from '../components/Footer/SimpleFooter';
+import { logPageView } from '../components/utils/analytics'; 
 
 export default function CurriculumVitae() {
+  useEffect(()=>{
+    logPageView();
+    },[]);
+
   return (
     <>
     <div className="container">
