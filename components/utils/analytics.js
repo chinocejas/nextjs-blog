@@ -1,7 +1,11 @@
 import ReactGA from 'react-ga';
 
 export const initGA = () => {
-  ReactGA.initialize(process.env.GA_TRACKING_KEY);
+  try{
+    ReactGA.initialize(process.env.NEXT_PUBLIC_GA_TRACKING_KEY);
+  }catch(error){
+    console.error('error to initialize GA')
+  };
 };
 
 export const logPageView = () => {

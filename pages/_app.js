@@ -4,20 +4,22 @@ import { useEffect } from 'react';
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from  '../theme/default'
 import { initGA, logPageView } from '../components/utils/analytics';
+import { Analytics } from "@vercel/analytics/react"
 
 function MyApp({ Component, pageProps }) {
 
-  useEffect(() => {
-    if (!window.GA_INITIALIZED) {
+  useEffect(() => {    
+    if (process.env.NEXT_PUBLIC_GA_TRACKING_KEY) {
       initGA();
-      window.GA_INITIALIZED = true;
     }
+
     logPageView();
   }, []);
 
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
+      <Analytics></Analytics>
     </ChakraProvider>
   )
 }
